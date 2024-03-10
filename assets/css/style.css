@@ -221,11 +221,31 @@ button, input{
 
 /*===== Home Section =====*/
 .home{
-    background: url('../img/header-rip.png');
-    background-size: cover;
+    /* background: url('../img/header-rip.png');
+    background-size: cover; */
     margin-left: 12rem;
-    background-position: center center;
+    /* background-position: center center; */
     height: 100vh;
+}
+
+.home__container-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+/* .container__left{
+    
+} */
+
+.container__right{
+    margin-right: 10rem;
+}
+
+.container__right img{
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 0.15rem var(--primary-color));
 }
 
 .home__container{
@@ -275,9 +295,9 @@ button, input{
 
 
 
-.home__img{
+/* .home__img{
     display: none;
-}
+} */
 
 .home__title{
     font-size: var(--biggest-font-size);
