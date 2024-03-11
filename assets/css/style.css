@@ -468,19 +468,320 @@ input {
 
 
 /*===== Qualification Section =====*/
+.qualification__container{
+    grid-template-columns: repeat(2,340px);
+    column-gap: 3rem;
+    justify-content: center;
+}
 
+.qualification__title{
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-2);
+}
 
+.qualification__title i{
+    color: var(--primary-color);
+    font-size: 1.7rem;
+}
+
+.timeline__item{
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: var(--mb-2-5);
+}
+
+.timeline__item:last-child{
+    margin-bottom: 0;
+}
+
+.timeline__item::before{
+    content: '';
+    width: 1px;
+    position: absolute;
+    left: 0.48rem;
+    top: 0;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.circle__dot{
+    position: absolute;
+    left: 3px;
+    top: 0;
+    height: 0.7rem;
+    width: 0.7rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    background: var(--primary-color);
+    transition: all 400ms ease;
+}
+
+.timeline__item:hover .circle__dot{
+    background-color: var(--body-color);
+}
+
+.timeline__title{
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-0-25);
+}
+
+.timeline__text{
+    font-size: var(--smaller-font-size);
+    margin-bottom: var(--mb-1);
+    color: #ccc;
+}
+
+.timeline__date{
+    display: flex;
+    align-items: center;
+    column-gap: 0.4rem;
+    font-size: var(--small-font-size);
+    color: var(--primary-color);
+}
 /*===== Skills Section =====*/
+.skills__container{
+    grid-template-columns: 360px 320px;
+    column-gap: 3rem;
+    justify-content: center;
+}
 
+.skills__header{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.skills__header:not(:last-child){
+    margin-bottom: var(--mb-2-5);
+}
+
+.skills__icon, .skills__arrow{
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.skills__icon{
+    margin-right: var(--mb-0-75);
+}
+
+.skills__title{
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+
+.skills__subtitle{
+    font-size: var(--small-font-size);
+}
+
+.skills__arrow{
+    margin-left: auto;
+}
+
+.skills__active .skills__arrow{
+    transform: rotate(-90deg);
+    transition: all 400ms ease;
+}
+
+.skills [data-content]{
+    display: none;
+}
+
+.skills__active[data-content]{
+    display: block;
+}
+
+.skills__list{
+    row-gap: 1.8rem;
+}
+
+.skills__titles{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--mb-0-5);
+}
+
+.skills__name{
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+}
+
+.skills__bar, .skills__percentage{
+    height: 5px;
+    border-radius: 0.25rem;
+}
+
+.skills__bar{
+    background: var(--box-color);
+}
+
+.skills__percentage{
+    display: block;
+    background: var(--primary-color);
+}
 
 /*===== Work Section =====*/
+.work__container{
+    grid-template-columns: repeat(3, 330px);
+    gap: 1.8rem;
+    justify-content: center;
+    padding-top: 1rem;
+}
 
+.work__filters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.work__item{
+    cursor: pointer;
+    color: var(--title-color);
+    padding: 0.25rem 0.75rem;
+    font-weight: var(--font-medium);
+    border-radius: 0.5rem;
+}
+
+.work__card{
+    background: var(--box-color);
+    padding: 1.25rem;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    transition: all 400ms ease;
+}
+
+.work__card img{
+    border-radius: 1rem;
+    margin-bottom: var(--mb-1);
+}
+
+.work__card:hover{
+    background: transparent;
+    border-color: var(--primary-color);
+}
+
+.portfolio__item-details{
+    display: none;
+}
+
+.work__title{
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-0-5);
+}
+
+.work__button{
+    font-size: var(--small-font-size);
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    cursor: pointer;
+}
+
+.work__button-icon{
+    font-size: 1rem;
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+    transition: 0.3s;
+}
+
+.work__button:hover .work__button-icon{
+    transform: translateX(0.25rem);
+}
 
 /* Active Item Work */
-
+.active__work{
+    background-color: var(--primary-color);
+}
 
 /* Portfolio Popup */
+.portfolio__popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms ease;
+}
 
+.portfolio__popup.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.portfolio__popup-inner{
+    background-color: var(--box-color);
+    width: 900px;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.portfolio__popup-content{
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    column-gap: 3rem;
+}
+
+.portfolio__popup-close{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.portfolio__popup-img{
+    border-radius: 1rem;
+}
+
+.portfolio__popup-subtitle{
+    font-size: var(--smaller-font-size);
+    margin-bottom: var(--mb-0-25);
+}
+
+.details__title{
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+}
+
+.details__description{
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-2);
+}
+
+.details__info li{
+    margin-bottom: var(--mb-0-75);
+    text-transform: capitalize;
+    font-size: var(--small-font-size);
+}
+
+.details__info li:last-child{
+    margin-bottom: 0;
+}
+
+.details__info li span{
+    font-weight: var(--normal-font-size);
+}
+
+.details__info li a{
+    text-transform: lowercase;
+    color: var(--primary-color);
+}
 
 /*===== Services Section =====*/
 
