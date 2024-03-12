@@ -1,12 +1,9 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-/*=============== VARIABLES CSS ===============*/
 :root {
-    /*===== Colors =====*/
     --hue-color: 242;
 
-    /* HSL Color Mode */
     --skin-color: hsl(342, 92%, 46%);
     --primary-color: #0095ff;
     --title-color: hsl(var(--hue-color), 8%, 95%);
@@ -16,10 +13,8 @@
     --scroll-bar-color: hsl(var(--hue-color), 12%, 38%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
 
-    /*===== Font and Typography =====*/
     --body-font: 'Poppins', sans-serif;
 
-    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
     --biggest-font-size: 3rem;
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
@@ -28,11 +23,9 @@
     --small-font-size: .875rem;
     --smaller-font-size: .813rem;
 
-    /*===== Font Weight =====*/
     --font-medium: 500;
     --font-bold: 600;
 
-    /*===== Margenes Bottom =====*/
     --mb-0-25: .25rem;
     --mb-0-5: .5rem;
     --mb-0-75: .75rem;
@@ -42,12 +35,10 @@
     --mb-2-5: 2.5rem;
     --mb-3: 3rem;
 
-    /*===== Z Index =====*/
     --z-fixed: 10;
     --z-modal: 100;
 }
 
-/* Responsive Typography */
 @media screen and (max-width: 1024px) {
     :root {
         --biggest-font-size: 2rem;
@@ -60,7 +51,6 @@
     }
 }
 
-/*=============== BASE ===============*/
 * {
     margin: 0;
     padding: 0;
@@ -113,7 +103,6 @@ input {
     outline: none;
 }
 
-/*=============== LAYOUT ===============*/
 .container {
     max-width: 1250px;
     margin-left: auto;
@@ -124,8 +113,6 @@ input {
     display: grid;
 }
 
-
-/*=============== REUSABLE CSS CLASSES ===============*/
 .section {
     padding: 6.5rem 0 2rem;
 }
@@ -144,13 +131,13 @@ input {
     color: var(--primary-color);
 }
 
-/*=============== SIDE NAVBAR ===============*/
 .sidebar {
     position: fixed;
     width: 100px;
     height: 100vh;
     background-color: var(--body-color);
     border-right: 1px solid var(--box-color);
+    transition: 0.5s;
 }
 
 .nav__logo {
@@ -240,7 +227,6 @@ input {
 }
 
 
-/* Active Link */
 .nav__link.active-link,
 .nav__link:hover {
     color: var(--primary-color);
@@ -260,14 +246,10 @@ input {
     margin: auto;
 }
 
-
-/*=============== MAIN ===============*/
 .main {
     margin-left: 100px;
 }
 
-
-/*===== Home Section =====*/
 .home {
     /* background: url('../img/header-rip.png');
     background-size: cover; */
@@ -394,8 +376,6 @@ input {
     margin-right: var(--mb-0-75);
 }
 
-
-/*===== Buttons =====*/
 .button {
     display: inline-flex;
     align-items: center;
@@ -432,7 +412,6 @@ input {
     font-size: 1.25rem;
 }
 
-/*===== About Section =====*/
 .about__container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 4rem;
@@ -495,8 +474,6 @@ input {
     color: #ccc;
 }
 
-
-/*===== Qualification Section =====*/
 .qualification__container{
     grid-template-columns: repeat(2,340px);
     column-gap: 3rem;
@@ -569,7 +546,8 @@ input {
     font-size: var(--small-font-size);
     color: var(--primary-color);
 }
-/*===== Skills Section =====*/
+
+
 .skills__container{
     grid-template-columns: 360px 320px;
     column-gap: 3rem;
@@ -650,7 +628,6 @@ input {
     background: var(--primary-color);
 }
 
-/*===== Work Section =====*/
 .work__container{
     grid-template-columns: repeat(3, 330px);
     gap: 1.8rem;
@@ -721,12 +698,10 @@ input {
     transform: translateY(-0.25rem);
 }
 
-/* Active Item Work */
 .active__work{
     background-color: var(--primary-color);
 }
 
-/* Portfolio Popup */
 .portfolio__popup{
     position: fixed;
     top: 0;
@@ -812,19 +787,6 @@ input {
     color: var(--primary-color);
 }
 
-/*===== Services Section =====*/
-
-
-/* Active Modal*/
-
-
-/*===== Testimonial Section =====*/
-
-
-/* Swiper Class */
-
-
-/*===== Contact Section =====*/
 .contact__container{
     grid-template-columns: 300px 340px;
     column-gap: 3rem;
@@ -973,7 +935,6 @@ textarea.input{
     opacity: 1;
 }
 
-/*=============== FOOTER ===============*/
 .footer{
     padding-top: 2rem;
 }
@@ -1038,17 +999,6 @@ textarea.input{
     color: var(--title-color);
 }
 
-/*=============== SCROLL UP ===============*/
-
-
-/* Show Scroll Up*/
-
-
-/*=============== SCROLL BAR ===============*/
-
-
-/*========== BREAKPOINTS ==========*/
-/* For Large Devices */
 @media screen and (max-width: 1408px) {
     .container{
         margin-left: var(--mb-2-5);
@@ -1335,7 +1285,7 @@ textarea.input{
     .home{
         height: initial;
         align-items: initial;
-        margin-top: 5rem;
+        /* margin-top: 5rem; */
         padding: 7rem 0 2rem;
     }
 
@@ -1377,11 +1327,6 @@ textarea.input{
         font-size: var(--normal-font-size);
     }
 }
-
-/* For Small Devices */
-@media screen and (max-width: 350px) {}
-
-
 
 ::-webkit-scrollbar {
     display: none;

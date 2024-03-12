@@ -1,15 +1,27 @@
-/*=============== SHOW SIDEBAR ===============*/
+const navMenu = document.getElementById('sidebar'),
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav__close');
 
+if(navToggle){
+    navToggle.addEventListener("click", ()=>{
+        navMenu.classList.add('show-sidebar');
+    })
+}
 
-/*===== SIDEBAR SHOW =====*/
-/* Validate If Constant Exists */
+if(navClose){
+    navClose.addEventListener("click", ()=>{
+        navMenu.classList.remove('show-sidebar');
+    })
+}
 
+const sidebarLinks = document.querySelectorAll('#sidebar a');
 
-/*===== SIDEBAR HIDDEN =====*/
-/* Validate If Constant Exists */
+sidebarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('show-sidebar');
+    });
+});
 
-
-/*=============== SKILLS TABS ===============*/
 const tabs = document.querySelectorAll('[data-target]'), tabcontent = document.querySelectorAll('[data-content]');
 
 tabs.forEach(tab=>{
@@ -30,8 +42,6 @@ tabs.forEach(tab=>{
     })
 })
 
-
-/*=============== MIXITUP FILTER PORTFOLIO ===============*/
 let mixerPortfolio = mixitup('.work__container', {
     selectors: {
         target: '.work__card'
@@ -41,8 +51,6 @@ let mixerPortfolio = mixitup('.work__container', {
     }
 });
 
-
-/*===== Link Active Work =====*/
 const linkwork = document.querySelectorAll('.work__item');
 
 function activework(){
@@ -52,7 +60,6 @@ function activework(){
 
 linkwork.forEach(l=>l.addEventListener("click", activework));
 
-/*===== Work Popup =====*/
 document.addEventListener("click", (e)=>{
     if(e.target.classList.contains("work__button")){
         togglePortfolioPopup();
@@ -72,13 +79,6 @@ function portfolioItemDetails(portfolioItem){
     document.querySelector(".portfolio__popup-body").innerHTML = portfolioItem.querySelector(".portfolio__item-details").innerHTML;
 }
 
-/*=============== SERVICES MODAL ===============*/
-
-
-/*=============== SWIPER TESTIMONIAL ===============*/
-
-
-/*=============== INPUT ANIMATION ===============*/
 const inputs = document.querySelectorAll(".input");
 
 function focusFunc(){
@@ -97,9 +97,3 @@ inputs.forEach((input)=>{
     input.addEventListener("focus", focusFunc);
     input.addEventListener("blur", blurFunc);
 })
-
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-
-
-/*=============== SHOW SCROLL UP ===============*/
